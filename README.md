@@ -173,5 +173,8 @@ pipeline {
 ```
 Also we need to define a parameter in Jenkins as we can see below
 <img width="1319" alt="Screenshot 2023-06-18 at 12 32 00 PM" src="https://github.com/Avnshrai/mkdocs/assets/33398974/674bd725-5089-49ff-a555-d666e31f45c7">
+to add the parameter we will use this parameter option in configuration section of jenkins
+ <img width="1305" alt="Screenshot 2023-06-18 at 9 22 53 PM" src="https://github.com/Avnshrai/mkdocs/assets/33398974/ab776984-605a-44fe-a340-1746f926d2a4">
+
 
 
