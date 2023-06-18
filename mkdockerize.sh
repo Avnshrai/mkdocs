@@ -39,7 +39,7 @@ docker build -t mkdocs_image .
 echo "************************************************************"
 echo "Starting a new container '$CONTAINER_NAME'..."
 echo "************************************************************"
-docker run -itd -p 8000:8000 -v "$local_directory:/app" --name "$CONTAINER_NAME" "$IMAGE_NAME" >/dev/null
+docker run -d -p 8000:8000 -v "$local_directory:/app" --name "$CONTAINER_NAME" "$IMAGE_NAME" >/dev/null
 echo
 
 
