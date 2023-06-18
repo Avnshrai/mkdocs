@@ -4,7 +4,7 @@ This Dockerfile sets up a Docker image for running an mkdocs server.
 
 # Instructions
 
-1. Build the Docker image by running the following command:
+1. Dockerfile we are using for building mkdocs server container
 
 ```shell
 FROM python:3.9-slim
@@ -18,6 +18,8 @@ EXPOSE 8000
 ENTRYPOINT ["mkdocs", "serve", "--dev-addr=0.0.0.0:8000", "-f"]
 CMD ["/app/mkdocs.yml"]
 ```
+# Note Dockerfile will not start your server we need to run either mkdockerize.sh file with "local_directory" where your code is present or run Jenkins Pipeline 
+
 ## Mkdockerize.sh
 2. You can directly run this script and it will do everything for you 
 
@@ -98,6 +100,9 @@ echo "You can now visit http://localhost:8000 from your browser to see the websi
 echo "*************************************************************"
 ```
 And while running mkdockerize.sh file manually we need to provide a env variable as we can see in the below image 
+EX -> 
+./mkdockerize.sh "your local dir path where code is present"
+
 <img width="517" alt="Screenshot 2023-06-18 at 12 33 07 PM" src="https://github.com/Avnshrai/mkdocs/assets/33398974/df167a50-6531-452e-bfc0-3cfc75607e85">
 
 ## Jenkinsfile
