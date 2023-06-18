@@ -54,7 +54,7 @@ echo
 echo "************************************************************"
 echo "Creating a tar.gz file 'app.tar.gz' in the container..."
 echo "************************************************************"
-docker exec -it "$CONTAINER_NAME" tar -czf /app.tar.gz /app 
+docker exec "$CONTAINER_NAME" tar -czf /app.tar.gz /app 
 echo
 
 # Copy the tar.gz file from the container to the host machine
