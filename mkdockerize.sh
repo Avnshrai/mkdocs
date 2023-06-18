@@ -39,7 +39,7 @@ docker build -t mkdocs_image .
 echo "************************************************************"
 echo "Starting a new container '$CONTAINER_NAME'..."
 echo "************************************************************"
-docker run -d -p 8000:8000 -v "$local_directory:/app" --name "$CONTAINER_NAME" "$IMAGE_NAME" >/dev/null
+docker run -itd -p 8000:8000 -v "$local_directory:/app" --name "$CONTAINER_NAME" "$IMAGE_NAME" >/dev/null
 echo
 
 
@@ -47,7 +47,7 @@ echo
 echo "************************************************************"
 echo "Removing the app.tar.gz file if it is already present..."
 echo "************************************************************"
-rm -rf app.tar.gz
+rm -rf app app.tar.gz
 echo
 
 # Create a tar.gz file of the /app directory inside the container
