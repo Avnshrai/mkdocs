@@ -100,8 +100,7 @@ echo "You can now visit http://localhost:8000 from your browser to see the websi
 echo "*************************************************************"
 ```
 And while running mkdockerize.sh file manually we need to provide a env variable as we can see below     
-and this file will also create a app.zip file
-Ex 
+and this file will also create a app.zip file 
 ```shell
 ./mkdockerize.sh "your local dir path where code is present"
 ```
