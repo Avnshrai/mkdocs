@@ -1,3 +1,8 @@
+## This project is about using Docker to encapsulate a tool called Mkdocs and serve the local directory to container and run web server on containers
+
+## Pre requisite
+Make sure Docker Engine is running and you are good to go 
+
 ## Dockerfile
 
 This Dockerfile sets up a Docker image for running an mkdocs server.
