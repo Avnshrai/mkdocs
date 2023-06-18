@@ -39,7 +39,7 @@ docker build -t mkdocs_image .
 echo "************************************************************"
 echo "Starting a new container '$CONTAINER_NAME'..."
 echo "************************************************************"
-docker run -itd -p 8000:8000 -v "$local_directory:/app" --name "$CONTAINER_NAME" "$IMAGE_NAME" >/dev/null
+docker run -itd -p 8000:8000 -v "$local_directory:/app" --name "$CONTAINER_NAME" "$IMAGE_NAME" 
 echo
 
 
@@ -54,14 +54,14 @@ echo
 echo "************************************************************"
 echo "Creating a tar.gz file 'app.tar.gz' in the container..."
 echo "************************************************************"
-docker exec -it "$CONTAINER_NAME" tar -czf /app.tar.gz /app >/dev/null
+docker exec -it "$CONTAINER_NAME" tar -czf /app.tar.gz /app 
 echo
 
 # Copy the tar.gz file from the container to the host machine
 echo "************************************************************"
 echo "Copying the tar.gz file 'app.tar.gz' to the current directory..."
 echo "************************************************************"
-docker cp "$CONTAINER_NAME:/app.tar.gz" ./app.tar.gz >/dev/null
+docker cp "$CONTAINER_NAME:/app.tar.gz" ./app.tar.gz 
 echo "Tar.gz file 'app.tar.gz' created and copied to the host machine."
 echo
 
