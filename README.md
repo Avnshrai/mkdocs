@@ -99,7 +99,8 @@ echo "Container '$CONTAINER_NAME_WITH_FILES' is started successfully."
 echo "You can now visit http://localhost:8000 from your browser to see the website."
 echo "*************************************************************"
 ```
-And while running mkdockerize.sh file manually we need to provide a env variable as we can see below                                                                 
+And while running mkdockerize.sh file manually we need to provide a env variable as we can see below     
+and this file will also create a app.zip file
 Ex 
 ```shell
 ./mkdockerize.sh "your local dir path where code is present"
