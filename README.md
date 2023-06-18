@@ -100,8 +100,10 @@ echo "You can now visit http://localhost:8000 from your browser to see the websi
 echo "*************************************************************"
 ```
 And while running mkdockerize.sh file manually we need to provide a env variable as we can see below                                                                 
-EX -> 
+Ex 
+```shell
 ./mkdockerize.sh "your local dir path where code is present"
+```
 
 <img width="517" alt="Screenshot 2023-06-18 at 12 33 07 PM" src="https://github.com/Avnshrai/mkdocs/assets/33398974/df167a50-6531-452e-bfc0-3cfc75607e85">
 
