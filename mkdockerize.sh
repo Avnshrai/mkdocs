@@ -57,19 +57,13 @@ docker cp "$CONTAINER_NAME:/app.zip" ./app.zip >/dev/null
 echo "Zip file 'app.zip' created and copied to the host machine."
 echo
 
-# Commit the container to create a new image and start a container to serve the directory
-#echo "************************************************************"
-#echo "Committing the container '$CONTAINER_NAME' to create a new image '$CONTAINER_NAME_WITH_FILES'..."
-#echo "************************************************************"
-#docker commit "$CONTAINER_NAME" "$CONTAINER_NAME_WITH_FILES" >/dev/null
-#echo
-
 # Stop and remove the container
 echo "************************************************************"
 echo "Stopping and removing the container '$CONTAINER_NAME'..."
 echo "************************************************************"
 docker stop "$CONTAINER_NAME" >/dev/null
 docker rm "$CONTAINER_NAME" >/dev/null
+docker rm "$CONTAINER_NAME_WITH_FILES" >/dev/null
 echo
 
 
