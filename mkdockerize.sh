@@ -21,7 +21,7 @@ else
 fi
 
 # Prompt the user to enter the path to the local directory
-local_directory="$1"
+local_directory="$local_directory"
 read -p "Enter the path to the local directory: " local_directory
 echo "#############"
 echo "$local_directory"
