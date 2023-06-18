@@ -21,6 +21,11 @@ else
 fi
 
 # Prompt the user to enter the path to the local directory
+# Set the local directory from the command-line argument
+local_directory="$1"
+echo "Local directory: $local_directory"
+echo
+
 local_directory="$1"
 read -p "Enter the path to the local directory: " local_directory
 echo "#############"
