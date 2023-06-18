@@ -131,7 +131,7 @@ fi
 echo "*************************************************************"
 ```
 And while running mkdockerize.sh file manually we need to provide a env variable as we can see below     
-and this file will also create a app.zip file 
+and this file will also create a app.tar.gz file which will be used to serve the webserver content inside the docker container
 ```shell
 ./mkdockerize.sh "your local dir path where code is present"
 ```
