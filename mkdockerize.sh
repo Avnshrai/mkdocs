@@ -22,7 +22,12 @@ fi
 
 # Prompt the user to enter the path to the local directory
 read -p "Enter the path to the local directory: " local_directory
-
+echo "#############"
+echo "$local_directory"
+echo "#############"
+#Build a Image 
+echo "************************************************************"
+docker build -t mkdocs_image .
 # Run the Docker container
 echo "************************************************************"
 echo "Starting a new container '$CONTAINER_NAME'..."
@@ -53,11 +58,11 @@ echo "Zip file 'app.zip' created and copied to the host machine."
 echo
 
 # Commit the container to create a new image and start a container to serve the directory
-echo "************************************************************"
-echo "Committing the container '$CONTAINER_NAME' to create a new image '$CONTAINER_NAME_WITH_FILES'..."
-echo "************************************************************"
-docker commit "$CONTAINER_NAME" "$CONTAINER_NAME_WITH_FILES" >/dev/null
-echo
+#echo "************************************************************"
+#echo "Committing the container '$CONTAINER_NAME' to create a new image '$CONTAINER_NAME_WITH_FILES'..."
+#echo "************************************************************"
+#docker commit "$CONTAINER_NAME" "$CONTAINER_NAME_WITH_FILES" >/dev/null
+#echo
 
 # Stop and remove the container
 echo "************************************************************"
@@ -67,11 +72,12 @@ docker stop "$CONTAINER_NAME" >/dev/null
 docker rm "$CONTAINER_NAME" >/dev/null
 echo
 
+
 # Start the new image container to serve the files
 echo "************************************************************"
 echo "Starting a container '$CONTAINER_NAME_WITH_FILES' to serve the files..."
 echo "************************************************************"
-docker run -itd -p 8000:8000 --name "$CONTAINER_NAME_WITH_FILES" "$CONTAINER_NAME_WITH_FILES" >/dev/null
+docker run -itd -p 8000:8000 -v "$local_directory:/app" --name "$CONTAINER_NAME_WITH_FILES" "$IMAGE_NAME" >/dev/null
 echo "Container '$CONTAINER_NAME_WITH_FILES' is started successfully."
 echo "You can now visit http://localhost:8000 from your browser to see the website."
 echo "*************************************************************"
