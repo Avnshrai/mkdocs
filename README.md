@@ -3,6 +3,24 @@
 ## Pre requisite
 Make sure Docker Engine is running and you are good to go 
 
+
+# How to run your web server
+
+ step 1. Copy all the necessary files which are provided below on the root directory where your mkdocs server files are present 
+ step 2. Create a Docker image by executing below command
+ ```shell
+docker build -t "image_name" .
+```
+step 3. Now we can run docker run command to produce a app.tar.gz file which will contain everything including your mkdocs server
+```shell
+docker run -itd -p 8000:8000 -v "local-directory-where-code-is-present":/shared-volume "image_name" produce
+```
+Replace your "image_name" with the image which you have build in the first step
+step 4. We can start our mkdocs server by running 
+```shell
+docker run -itd -p 8000:8000 -v "local-directory-where-code-is-present":/shared-volume "image_name" serve
+```
+## Necessary Files 
 ## Dockerfile
 
 This Dockerfile sets up a Docker image for running an mkdocs server.
@@ -24,7 +42,7 @@ RUN chmod +x /entrypoint.sh
 
 ENTRYPOINT ["/entrypoint.sh"]
 ```
-# Note Dockerfile will not start your server we need to run either mkdockerize.sh file with "local_directory" where your code is present or run Jenkins Pipeline 
+# Note Dockerfile will not start your server
 
 ## Mkdockerize.sh
 2. Using mkdockerize.sh file as a entrypoint for docker container which will take produce and serve arguments while running the container
