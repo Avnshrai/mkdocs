@@ -6,24 +6,24 @@ Make sure Docker Engine is running and you are good to go
 
 # How to run your web server
 
- step 1. Copy all the necessary files which are provided below on the root directory where your mkdocs server files are present 
- step 2. Create a Docker image by executing below command
+ Step 1. Copy all the necessary files provided below in the root directory where your mkdocs server files are present 
+ Step 2. Create a Docker image by executing the below command
  ```shell
 docker build -t "image_name" .
 ```
-step 3. Now we can run docker run command to produce a app.tar.gz file which will contain everything including your mkdocs server
+Step 3. Now we can run docker run command to produce an app.tar.gz file which will contain everything including your mkdocs server
 ```shell
 docker run -itd -p 8000:8000 -v "local-directory-where-code-is-present":/shared-volume "image_name" produce
 ```
-Replace your "image_name" with the image which you have build in the first step
-step 4. We can start our mkdocs server by running 
+Replace your "image_name" with the image which you have built in the first step
+Step 4. We can start our mkdocs server by running 
 ```shell
 docker run -itd -p 8000:8000 -v "local-directory-where-code-is-present":/shared-volume "image_name" serve
 ```
 ## Necessary Files 
 ## Dockerfile
 
-This Dockerfile sets up a Docker image for running an mkdocs server.
+This Dockerfile sets up a Docker image for running a mkdocs server.
 
 # Instructions
 
