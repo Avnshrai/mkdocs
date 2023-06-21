@@ -27,7 +27,7 @@ ENTRYPOINT ["/entrypoint.sh"]
 # Note Dockerfile will not start your server we need to run either mkdockerize.sh file with "local_directory" where your code is present or run Jenkins Pipeline 
 
 ## Mkdockerize.sh
-2. You can directly run this script and it will do everything for you 
+2. Using mkdockerize.sh file as a entrypoint for docker container which will take produce and serve arguments while running the container
 
 ```shell
 #!/bin/bash
@@ -46,11 +46,6 @@ else
     echo "Please provide a valid command: 'produce' or 'serve'"
 fi
 ```   
-and this file will also create an app.tar.gz file which will be used to serve the webserver content inside the docker container
-```shell
-```
-
-<img width="517" alt="Screenshot 2023-06-18 at 12 33 07 PM" src="https://github.com/Avnshrai/mkdocs/assets/33398974/df167a50-6531-452e-bfc0-3cfc75607e85">
 
 ## Jenkinsfile
 3. this is jenkinsfile which is going to build a image using the script and will run a container with the latest image
