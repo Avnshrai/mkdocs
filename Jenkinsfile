@@ -20,8 +20,8 @@ pipeline {
                 sh 'echo ${local_directory}'
                 sh 'sudo docker build -t packaged-mk-docs-image .'
                 sh 'sudo chmod +x mkdockerize.sh'
-                sh 'echo "Running docker container with latest code"'
-                sh 'sudo ./mkdockerize.sh "${local_directory}"'
+                sh 'sudo docker run -itd -v ${local_directory}:/shared-volume packaged-mk-docs-image produce'
+                sh 'sudo docker run -itd -p 8000:8000 -v ${local_directory}:/shared-volume packaged-mk-docs-image serve'
             }
         }
     }
